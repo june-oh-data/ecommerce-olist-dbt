@@ -90,7 +90,6 @@ ecommerce_olist/
 - **Actual vs Estimated Delivery Days** — Compare delivery performance by state
 - **Late Delivery Rate by State (%)** — Identify delivery bottlenecks
 - **Top 10 Categories by Average Review Score** — Measure customer satisfaction
-- **Top 10 Categories by Positive Review Rate (%)** — Find highest rated categories
 
 ## Data Quality Tests
 
