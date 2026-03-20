@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: mart_sales_monthly
+    description: "Monthly sales performance including revenue, orders, and customers"
+    columns:
+      - name: order_month
+        description: "Month of orders"
+        data_tests:
+          - not_null
+          - unique
+      - name: total_orders
+        description: "Total number of delivered orders"
+        data_tests:
+          - not_null
+      - name: total_revenue
+        description: "Total revenue in BRL"
+        data_tests:
+          - not_null
+
+  - name: mart_sales_by_category
+    description: "Sales performance aggregated by product category"
+    columns:
+      - name: category
+        description: "Product category name in English"
+        data_tests:
+          - not_null
+      - name: total_revenue
+        description: "Total revenue in BRL"
+        data_tests:
+          - not_null
+
+  - name: mart_customer_analysis
+    description: "Customer analysis by state and city including repeat customers"
+    columns:
+      - name: customer_state
+        description: "Brazilian state code"
+        data_tests:
+          - not_null
+      - name: total_customers
+        description: "Total unique customers"
+        data_tests:
+          - not_null
+
+  - name: mart_delivery_analysis
+    description: "Delivery performance analysis by customer state"
+    columns:
+      - name: customer_state
+        description: "Brazilian state code"
+        data_tests:
+          - not_null
+      - name: avg_delivery_days
+        description: "Average actual delivery days"
+      - name: late_delivery_rate_pct
+        description: "Percentage of late deliveries"
+
+  - name: mart_review_analysis
+    description: "Review score analysis by product category"
+    columns:
+      - name: category
+        description: "Product category name in English"
+        data_tests:
+          - not_null
+      - name: avg_review_score
+        description: "Average review score (1-5)"
+      - name: positive_review_pct
+        description: "Percentage of reviews with score 4 or 5"

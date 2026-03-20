@@ -1,0 +1,106 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Cleaned and standardized order data"
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer identifier"
+        data_tests:
+          - not_null
+      - name: order_status
+        description: "Current status of the order"
+        data_tests:
+          - not_null
+
+  - name: stg_order_items
+    description: "Cleaned order items data"
+    columns:
+      - name: order_id
+        description: "Order identifier"
+        data_tests:
+          - not_null
+      - name: product_id
+        description: "Product identifier"
+        data_tests:
+          - not_null
+      - name: price
+        description: "Item price in BRL"
+        data_tests:
+          - not_null
+
+  - name: stg_order_payments
+    description: "Cleaned payment data"
+    columns:
+      - name: order_id
+        description: "Order identifier"
+        data_tests:
+          - not_null
+      - name: payment_value
+        description: "Payment amount in BRL"
+        data_tests:
+          - not_null
+
+  - name: stg_order_reviews
+    description: "Cleaned review data"
+    columns:
+      - name: review_id
+        description: "Unique review identifier"
+        data_tests:
+          - not_null
+      - name: review_score
+        description: "Review score (1-5)"
+        data_tests:
+          - not_null
+
+  - name: stg_customers
+    description: "Cleaned customer data"
+    columns:
+      - name: customer_id
+        description: "Customer identifier"
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_unique_id
+        description: "Unique customer identifier across orders"
+        data_tests:
+          - not_null
+
+  - name: stg_products
+    description: "Cleaned product data"
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_sellers
+    description: "Cleaned seller data"
+    columns:
+      - name: seller_id
+        description: "Unique seller identifier"
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_product_category
+    description: "Product category name translation from Portuguese to English"
+    columns:
+      - name: product_category_name
+        description: "Category name in Portuguese"
+      - name: product_category_name_english
+        description: "Category name in English"
+
+  - name: stg_geolocation
+    description: "Geolocation data by zip code"
+    columns:
+      - name: geolocation_zip_code_prefix
+        description: "Zip code prefix"
+        data_tests:
+          - not_null

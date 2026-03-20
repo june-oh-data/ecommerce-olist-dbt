@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: ecommerce_olist
+    database: lucky-wall-468000-v1
+    schema: ecommerce_olist
+    tables:
+      - name: olist_orders
+      - name: olist_order_items
+      - name: olist_order_payments
+      - name: olist_order_reviews
+      - name: olist_customers
+      - name: olist_products
+      - name: olist_sellers
+      - name: olist_geolocation
+      - name: product_category_name_translation
